@@ -1,0 +1,25 @@
+server:
+  port: 8001
+
+spring:
+  profiles: dev
+  application:
+    name: springcloud-app-hystrix-config-8001
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/, http://eureka7002.com:7002/eureka/, http://eureka7003.com:7003/eureka/
+
+---
+server:
+  port: 8002
+spring:
+  profiles: test
+  application:
+    name: springcloud-app-hystrix-config-8002
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/, http://eureka7002.com:7002/eureka/, http://eureka7003.com:7003/eureka/
